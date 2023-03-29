@@ -1,0 +1,72 @@
+﻿@page "/cheesecalculator"
+
+<PageTitle>Calculator</PageTitle>
+<MudPaper Class="d-flex justify-center" Elevation="0">
+    <MudStack Class="pa-4" Style="width: 450px">
+        <MudNumericField HideSpinButtons="true" @bind-Value="edamWeight" Label="Edam Cheese Weight" Variant="Variant.Outlined" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="edamDouble" Class="py-4">Calculate</MudButton>
+            <MudField Label="Total Price" Variant="Variant.Filled"  >@edamCalculatedPrice</MudField>
+        <MudNumericField HideSpinButtons="true" @bind-Value="rembrandWeight" Label="Rembrand Cheese Weight" Variant="Variant.Outlined"  />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="rembrandDouble" Class="py-4" >Calculate</MudButton>
+            <MudField Label="Total Price" Variant="Variant.Filled" >@rembrandCalculatedPrice</MudField>
+        <MudNumericField HideSpinButtons="true" @bind-Value="leydenWeight" Label="Leyden Cheese Weight" Variant="Variant.Outlined" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="leydenDouble" Class="py-4">Calculate</MudButton>
+            <MudField Label="Total Price" Variant="Variant.Filled">@leydenCalculatedPrice</MudField>
+        <MudNumericField HideSpinButtons="true" @bind-Value="goudacuminWeight" Label="Gouda Cumin Cheese Weight" Variant="Variant.Outlined" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="goudacuminDouble" Class="py-4">Calculate</MudButton>
+            <MudField Label="Total Price" Variant="Variant.Filled">@goudacuminCalculatedPrice</MudField>
+        <MudNumericField HideSpinButtons="true" @bind-Value="yongWeight" Label="Gouda Yong Cheese Weight" Variant="Variant.Outlined" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="yongDouble" Class="py-4">Calculate</MudButton>
+            <MudField Label="Total Price" Variant="Variant.Filled">@yongCalculatedPrice</MudField>
+    </MudStack>
+</MudPaper>
+
+
+@code 
+{
+    double edamWeight { get; set; } 
+
+    double edamCalculatedPrice { get; set; }
+    
+    double rembrandWeight { get; set; }
+
+    double rembrandCalculatedPrice { get; set; }
+    
+    double leydenWeight { get; set; } 
+
+    double leydenCalculatedPrice { get; set; }
+   
+    double goudacuminWeight { get; set; }
+
+    double goudacuminCalculatedPrice { get; set; }
+
+    double yongWeight { get; set; }
+
+    double yongCalculatedPrice { get; set; }
+
+    
+
+
+
+    public void edamDouble()
+    {
+        edamCalculatedPrice = edamWeight / 1000 * 25.85;
+    }
+
+    public void rembrandDouble()
+    {
+        rembrandCalculatedPrice = rembrandWeight /1000 * 39.59;
+    }
+    public void leydenDouble()
+    {
+        leydenCalculatedPrice = leydenWeight /1000 * 34.65;
+    }
+    public void goudacuminDouble()
+    {
+        goudacuminCalculatedPrice = goudacuminWeight /1000 * 30.15;
+    }
+    public void yongDouble()
+    {
+        yongCalculatedPrice = yongWeight /1000 * 29.49;
+    }
+}   

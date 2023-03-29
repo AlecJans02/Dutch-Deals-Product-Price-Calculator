@@ -1,0 +1,38 @@
+﻿@page "/calculator"
+
+<PageTitle>Calculator</PageTitle>
+<MudPaper Class="d-flex justify-center" Elevation="0">
+    <MudStack Class="pa-4" Style="width: 450px">
+        <MudNumericField HideSpinButtons="true" @bind-Value="makreelWeight" Label="Makreel Weight" Variant="Variant.Outlined" />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="makreelDouble" Class="py-4">Calculate</MudButton>
+            <MudField Label="Total Price" Variant="Variant.Filled"  >@calculatedPrice</MudField>
+        <MudNumericField HideSpinButtons="true" @bind-Value="pallingWeight" Label="Makreel Weight" Variant="Variant.Outlined"  />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="pallingDouble" Class="py-4" >Calculate</MudButton>
+            <MudField Label="Total Price" Variant="Variant.Filled" >@calculatedPalPrice</MudField>
+    </MudStack>
+</MudPaper>
+
+
+@code 
+{
+    double makreelWeight { get; set; } 
+
+    double calculatedPrice { get; set; }
+
+    double pallingWeight { get; set; }
+
+    double calculatedPalPrice { get; set; }
+
+
+
+    public void makreelDouble()
+    {
+        //calculation should be weight divide 1000 times the kilo price
+        calculatedPrice = makreelWeight / 1000 * 35.06;
+    }
+
+    public void pallingDouble()
+    {
+        calculatedPalPrice = pallingWeight /1000 * 69.14;
+    }
+}   
